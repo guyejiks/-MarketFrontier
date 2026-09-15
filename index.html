@@ -4,731 +4,627 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Global Investing, Forex, Crypto and Wealth Intelligence">
-<title>Global Market Chronicles | Financial Intelligence</title>
+<title>MarketFrontier | Global Markets & Financial Intelligence</title>
 
 <style>
-:root {
-    --black: #080a0d;
-    --surface: #0f1217;
-    --surface-2: #151922;
-    --surface-3: #1b2029;
-    --line: #272d37;
-    --white: #f7f8fa;
-    --muted: #9299a5;
-    --muted-2: #68717e;
-    --blue: #4d8dff;
-    --green: #35c98a;
-    --max: 1240px;
+:root{
+    --black:#090909;
+    --text:#111;
+    --white:#fff;
+    --gray-50:#fafafa;
+    --gray-100:#f4f4f4;
+    --gray-200:#e7e7e7;
+    --gray-600:#666;
+    --accent:#1d4ed8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: var(--black);
-    color: var(--white);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.7;
+body{
+    background:#fff;
+    color:#111;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.7;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.container {
-    width: min(var(--max), calc(100% - 40px));
-    margin: auto;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-/* =========================
-   TOP BAR
-========================= */
+.container{
+    width:min(1240px,calc(100% - 40px));
+    margin:auto;
+}
+
+/* TOP MARKET BAR */
+
+.market-bar{
+    background:#090909;
+    color:#fff;
+    font-size:11px;
+    letter-spacing:.08em;
+}
 
-.topbar {
-    border-bottom: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: .04em;
+.market-bar-inner{
+    min-height:36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.topbar-inner {
-    min-height: 36px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.market-live{
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
-.market-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.live-dot{
+    width:7px;
+    height:7px;
+    background:#35b87f;
+    border-radius:50%;
 }
 
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--green);
+.market-links{
+    color:#bdbdbd;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
-header {
-    background: rgba(8,10,13,.94);
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(16px);
+header{
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid #e7e7e7;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.header-main {
-    min-height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+.header-inner{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
 }
 
-.logo {
-    font-size: 19px;
-    font-weight: 900;
-    letter-spacing: -.7px;
-    white-space: nowrap;
+.logo{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1.2px;
 }
 
-.logo span {
-    color: var(--blue);
+.logo span{
+    font-weight:400;
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    overflow-x: auto;
+.nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
 }
 
-.nav a {
-    color: #c8cdd5;
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: .2s;
+.nav a{
+    font-size:12px;
+    font-weight:700;
+    color:#333;
+    text-transform:uppercase;
+    letter-spacing:.05em;
 }
 
-.nav a:hover {
-    color: white;
+.nav a:hover{
+    color:#1d4ed8;
 }
 
-.header-button {
-    border: 1px solid var(--line);
-    padding: 9px 15px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: 700;
-    white-space: nowrap;
+.subscribe-btn{
+    border:1px solid #090909;
+    padding:10px 16px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
 }
 
-/* =========================
-   BREAKING BAR
-========================= */
+/* BREAKING */
 
-.breaking {
-    border-bottom: 1px solid var(--line);
-    background: #0b0e12;
+.breaking{
+    border-bottom:1px solid #e7e7e7;
+    background:#fafafa;
 }
 
-.breaking-inner {
-    min-height: 42px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    overflow: hidden;
+.breaking-inner{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-.breaking-label {
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: .12em;
-    white-space: nowrap;
+.breaking-label{
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.12em;
 }
 
-.breaking-text {
-    color: #b9bec7;
-    font-size: 12px;
-    white-space: nowrap;
+.breaking-text{
+    color:#666;
+    font-size:12px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
-.hero {
-    padding: 60px 0 42px;
-    border-bottom: 1px solid var(--line);
+.hero{
+    padding:48px 0 55px;
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(280px, .7fr);
-    gap: 45px;
-    align-items: end;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.5fr .85fr;
+    gap:30px;
 }
 
-.kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .13em;
-    margin-bottom: 18px;
+.hero-image{
+    height:470px;
+    overflow:hidden;
+    background:#ddd;
 }
 
-.kicker::before {
-    content: "";
-    width: 24px;
-    height: 1px;
-    background: var(--blue);
+.hero-image img{
+    object-fit:cover;
+    transition:transform .6s;
 }
 
-.hero h1 {
-    max-width: 850px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(38px, 5vw, 68px);
-    line-height: 1.04;
-    letter-spacing: -2.8px;
-    margin-bottom: 23px;
+.hero-image:hover img{
+    transform:scale(1.03);
 }
 
-.hero-description {
-    max-width: 760px;
-    color: var(--muted);
-    font-size: 16px;
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:15px;
 }
 
-.hero-side {
-    border-left: 1px solid var(--line);
-    padding-left: 30px;
+.category{
+    color:#1d4ed8;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:17px;
 }
 
-.hero-side-label {
-    color: var(--muted-2);
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    margin-bottom: 14px;
+.hero h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(38px,5vw,63px);
+    line-height:1.04;
+    letter-spacing:-2.5px;
+    margin-bottom:22px;
 }
 
-.hero-side h3 {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    line-height: 1.25;
-    margin-bottom: 10px;
+.hero-description{
+    color:#666;
+    font-size:16px;
+    max-width:620px;
+    margin-bottom:22px;
 }
 
-.hero-side p {
-    color: var(--muted);
-    font-size: 13px;
+.article-meta{
+    color:#777;
+    font-size:11px;
 }
 
-/* =========================
-   MAIN
-========================= */
+/* LATEST */
 
-.main-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
-    gap: 50px;
-    padding: 48px 0;
+.section{
+    padding:55px 0;
+    border-top:1px solid #e7e7e7;
 }
 
-/* =========================
-   ARTICLE
-========================= */
+.section-header{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:28px;
+}
 
-article {
-    min-width: 0;
+.section-header h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:31px;
 }
 
-.article-header {
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--line);
+.featured-grid{
+    display:grid;
+    grid-template-columns:1.35fr .8fr .8fr;
+    gap:22px;
 }
 
-.article-category {
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    margin-bottom: 14px;
+.card{
+    border:1px solid #e7e7e7;
+    background:#fff;
+    transition:.25s;
 }
 
-article h2.article-title {
-    border: 0;
-    padding: 0;
-    margin: 0 0 14px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.12;
-    letter-spacing: -1.5px;
+.card:hover{
+    border-color:#aaa;
+    transform:translateY(-3px);
 }
 
-.meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    color: var(--muted);
-    font-size: 12px;
+.card-image{
+    height:230px;
+    overflow:hidden;
+    background:#f4f4f4;
 }
 
-.meta span:not(:last-child)::after {
-    content: "•";
-    margin-left: 15px;
-    color: var(--muted-2);
+.card-image img{
+    transition:transform .5s;
 }
 
-.article-body {
-    padding-top: 30px;
-    max-width: 780px;
+.card:hover .card-image img{
+    transform:scale(1.04);
 }
 
-.article-body p {
-    color: #c9ced6;
-    font-size: 17px;
-    line-height: 1.85;
-    margin-bottom: 25px;
+.card-large .card-image{
+    height:315px;
 }
 
-.article-body a {
-    color: #72a7ff;
-    border-bottom: 1px solid rgba(114,167,255,.3);
+.card-content{
+    padding:20px;
 }
 
-.article-body h2 {
-    color: white;
-    font-family: Georgia, serif;
-    font-size: 27px;
-    line-height: 1.25;
-    margin: 48px 0 17px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
+.card-category{
+    color:#1d4ed8;
+    font-size:10px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:9px;
 }
 
-.internal-box {
-    margin: 34px 0;
-    padding: 23px 25px;
-    background: linear-gradient(
-        135deg,
-        rgba(38,72,125,.22),
-        rgba(18,23,31,.8)
-    );
-    border: 1px solid #263b5e;
-    border-radius: 8px;
+.card h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:23px;
+    line-height:1.25;
+    margin-bottom:10px;
 }
 
-.internal-box strong {
-    display: block;
-    color: white;
-    margin-bottom: 7px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: .06em;
+.card p{
+    color:#666;
+    font-size:13px;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
+/* ARTICLE */
 
-aside {
-    position: sticky;
-    top: 105px;
-    height: fit-content;
+.main-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:60px;
+    padding:65px 0;
+    border-top:1px solid #e7e7e7;
 }
 
-.sidebar-widget {
-    border-top: 2px solid white;
-    padding-top: 17px;
-    margin-bottom: 42px;
+.article{
+    max-width:800px;
 }
 
-.sidebar-widget h3 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    margin-bottom: 17px;
+.article-title{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(32px,4vw,50px);
+    line-height:1.1;
+    margin-bottom:16px;
 }
 
-.sidebar-widget ul {
-    list-style: none;
+.article-body{
+    padding-top:30px;
 }
 
-.sidebar-widget li {
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line);
+.article-body p{
+    font-family:Georgia,"Times New Roman",serif;
+    color:#303030;
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:26px;
 }
 
-.sidebar-widget li:last-child {
-    border-bottom: 0;
+.article-body h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:29px;
+    margin:48px 0 18px;
 }
 
-.sidebar-widget a {
-    display: block;
-    color: #b8bec8;
-    font-size: 13px;
-    line-height: 1.45;
-    transition: .2s;
-}
+/* SIDEBAR */
 
-.sidebar-widget a:hover {
-    color: white;
-    padding-left: 4px;
+.sidebar{
+    position:sticky;
+    top:105px;
+    height:fit-content;
 }
 
-/* =========================
-   TRENDING
-========================= */
-
-.trending {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 35px 0;
+.sidebar-widget{
+    border-top:3px solid #000;
+    padding-top:15px;
+    margin-bottom:42px;
 }
 
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 25px;
+.sidebar-widget h3{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:14px;
 }
 
-.section-heading h2 {
-    font-family: Georgia, serif;
-    font-size: 27px;
+.sidebar-item{
+    padding:15px 0;
+    border-bottom:1px solid #e7e7e7;
 }
 
-.section-heading span {
-    color: var(--muted);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
+.sidebar-number{
+    color:#aaa;
+    font-family:Georgia,serif;
+    font-size:18px;
+    margin-right:8px;
 }
+
+/* MARKETS */
 
-.trending-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+.topic-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    border-top:1px solid #e7e7e7;
+    border-left:1px solid #e7e7e7;
 }
 
-.trending-card {
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    gap: 14px;
-    padding-right: 20px;
-    border-right: 1px solid var(--line);
+.topic{
+    min-height:190px;
+    padding:23px;
+    border-right:1px solid #e7e7e7;
+    border-bottom:1px solid #e7e7e7;
 }
 
-.trending-card:last-child {
-    border-right: 0;
+.topic:hover{
+    background:#fafafa;
 }
 
-.trending-number {
-    font-family: Georgia, serif;
-    font-size: 28px;
-    color: var(--muted-2);
+.topic-number{
+    color:#aaa;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:20px;
 }
 
-.trending-card h3 {
-    font-family: Georgia, serif;
-    font-size: 17px;
-    line-height: 1.3;
-    margin-bottom: 7px;
+.topic h3{
+    font-family:Georgia,serif;
+    font-size:18px;
+    margin-bottom:9px;
 }
 
-.trending-card p {
-    color: var(--muted);
-    font-size: 12px;
+.topic p{
+    color:#666;
+    font-size:12px;
 }
 
-/* =========================
-   DIRECTORY
-========================= */
+/* LIBRARY */
 
-.directory-section {
-    padding: 70px 0 30px;
+.directory{
+    padding:65px 0;
+    border-top:1px solid #e7e7e7;
 }
 
-.directory-intro {
-    max-width: 700px;
-    margin-bottom: 32px;
+.directory-intro{
+    max-width:700px;
+    margin-bottom:32px;
 }
 
-.directory-intro h2 {
-    font-family: Georgia, serif;
-    font-size: 38px;
-    line-height: 1.15;
-    margin-bottom: 10px;
+.directory-intro h2{
+    font-family:Georgia,serif;
+    font-size:40px;
+    line-height:1.1;
+    margin-bottom:10px;
 }
 
-.directory-intro p {
-    color: var(--muted);
-    font-size: 14px;
+.directory-intro p{
+    color:#666;
+    font-size:14px;
 }
 
-.directory-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
+.directory-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
 }
 
-.cluster-box {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: 20px;
-    transition: .2s;
+.cluster{
+    border:1px solid #e7e7e7;
+    padding:20px;
 }
 
-.cluster-box:hover {
-    border-color: #414a57;
-    transform: translateY(-2px);
+.cluster h3{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    margin-bottom:15px;
 }
 
-.cluster-box h3 {
-    font-size: 12px;
-    line-height: 1.4;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    color: white;
-    margin-bottom: 17px;
+.cluster li{
+    font-size:11px;
+    color:#666;
+    padding:4px 0;
 }
 
-.cluster-box ol {
-    padding-left: 17px;
-    color: var(--muted);
-}
+/* NEWSLETTER */
 
-.cluster-box li {
-    padding: 5px 0;
-    font-size: 11px;
-    line-height: 1.45;
+.newsletter{
+    margin:20px 0 70px;
+    padding:50px;
+    background:#000;
+    color:#fff;
+    display:grid;
+    grid-template-columns:1fr 380px;
+    gap:40px;
+    align-items:center;
 }
 
-.cluster-box li::marker {
-    color: var(--muted-2);
+.newsletter h2{
+    font-family:Georgia,serif;
+    font-size:34px;
 }
 
-.cluster-box a {
-    color: #aeb5c0;
+.newsletter p{
+    color:#aaa;
 }
 
-.cluster-box a:hover {
-    color: white;
+.newsletter-form{
+    display:flex;
 }
 
-/* =========================
-   NEWSLETTER
-========================= */
+.newsletter-form input{
+    flex:1;
+    padding:14px;
+    border:1px solid #444;
+    background:#111;
+    color:#fff;
+}
 
-.newsletter {
-    margin: 60px 0;
-    padding: 48px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 1fr 350px;
-    gap: 40px;
-    align-items: center;
+.newsletter-form button{
+    border:0;
+    background:#fff;
+    color:#000;
+    padding:0 20px;
+    font-weight:900;
 }
 
-.newsletter h2 {
-    font-family: Georgia, serif;
-    font-size: 31px;
-    margin-bottom: 8px;
+/* FOOTER */
+
+footer{
+    border-top:1px solid #e7e7e7;
+    padding:40px 0;
 }
 
-.newsletter p {
-    color: var(--muted);
-    font-size: 14px;
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
 }
 
-.newsletter-form {
-    display: flex;
-    gap: 8px;
+.footer-logo{
+    font-family:Georgia,serif;
+    font-size:20px;
+    font-weight:900;
 }
 
-.newsletter-form input {
-    min-width: 0;
-    flex: 1;
-    background: var(--black);
-    border: 1px solid var(--line);
-    padding: 13px;
-    color: white;
-    outline: none;
+.footer-text{
+    color:#777;
+    font-size:12px;
 }
 
-.newsletter-form button {
-    background: white;
-    color: black;
-    border: 0;
-    padding: 0 18px;
-    font-weight: 800;
-    cursor: pointer;
+.footer-links{
+    display:flex;
+    gap:20px;
+    color:#666;
+    font-size:11px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* MOBILE */
 
-footer {
-    border-top: 1px solid var(--line);
-    padding: 35px 0;
-    color: var(--muted);
-    font-size: 12px;
-}
+@media(max-width:1000px){
 
-.footer-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
+    .nav{
+        display:none;
+    }
 
-.footer-logo {
-    color: white;
-    font-weight: 900;
-}
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .card-large{
+        grid-column:1/-1;
+    }
 
-/* =========================
-   MOBILE
-========================= */
+    .directory-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 
-@media (max-width: 1050px) {
-    .directory-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .topic-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
-@media (max-width: 850px) {
-    .header-main {
-        min-height: 65px;
+@media(max-width:750px){
+
+    .container{
+        width:min(100% - 28px,1240px);
     }
 
-    .nav {
-        display: none;
+    .market-links{
+        display:none;
     }
 
-    .hero {
-        padding: 42px 0 35px;
+    .hero-image{
+        height:300px;
     }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .hero h1{
+        font-size:39px;
     }
 
-    .hero-side {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        padding: 25px 0 0;
+    .featured-grid{
+        grid-template-columns:1fr;
     }
 
-    .main-layout {
-        grid-template-columns: 1fr;
-        gap: 55px;
+    .card-large{
+        grid-column:auto;
     }
 
-    aside {
-        position: static;
+    .main-layout{
+        grid-template-columns:1fr;
     }
 
-    .trending-grid {
-        grid-template-columns: 1fr;
+    .sidebar{
+        position:static;
     }
 
-    .trending-card {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-        padding: 16px 0;
+    .topic-grid{
+        grid-template-columns:1fr;
     }
 
-    .trending-card:last-child {
-        border-bottom: 0;
+    .directory-grid{
+        grid-template-columns:1fr;
     }
 
-    .directory-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .newsletter{
+        grid-template-columns:1fr;
+        padding:32px 24px;
     }
 
-    .newsletter {
-        grid-template-columns: 1fr;
-        padding: 30px;
-    }
-}
-
-@media (max-width: 520px) {
-    .container {
-        width: min(100% - 28px, var(--max));
+    .newsletter-form{
+        flex-direction:column;
+        gap:8px;
     }
 
-    .topbar-inner {
-        justify-content: center;
+    .newsletter-form button{
+        padding:14px;
     }
 
-    .topbar-inner > span {
-        display: none;
-    }
-
-    .header-button {
-        display: none;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-        letter-spacing: -1.8px;
-    }
-
-    article h2.article-title {
-        font-size: 31px;
-    }
-
-    .article-body p {
-        font-size: 16px;
-    }
-
-    .directory-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-    }
-
-    .newsletter-form button {
-        padding: 13px;
-    }
-
-    .footer-inner {
-        flex-direction: column;
+    .footer-inner{
+        flex-direction:column;
     }
 }
 </style>
@@ -736,471 +632,894 @@ footer {
 
 <body>
 
-<!-- TOP MARKET BAR -->
-<div class="topbar">
-    <div class="container topbar-inner">
-        <div class="market-status">
-            <span class="status-dot"></span>
-            GLOBAL MARKETS
-        </div>
-        <span>FOREX · EQUITIES · CRYPTO · MACRO</span>
-    </div>
+<!-- MARKET BAR -->
+
+<div class="market-bar">
+<div class="container market-bar-inner">
+
+<div class="market-live">
+<span class="live-dot"></span>
+GLOBAL MARKETS
 </div>
 
-<!-- MAIN HEADER -->
+<div class="market-links">
+FOREX · EQUITIES · CRYPTO · MACRO · WEALTH
+</div>
+
+</div>
+</div>
+
+
+<!-- HEADER -->
+
 <header>
-    <div class="container header-main">
 
-        <a href="#" class="logo">
-            GLOBAL MARKET <span>CHRONICLES</span>
-        </a>
+<div class="container header-inner">
 
-        <nav class="nav">
-            <a href="#cluster-1">Forex</a>
-            <a href="#cluster-2">Equities</a>
-            <a href="#cluster-3">Crypto</a>
-            <a href="#cluster-4">Prop Trading</a>
-            <a href="#cluster-5">Macro</a>
-        </nav>
+<a href="#" class="logo">
+Market<span>Frontier</span>
+</a>
 
-        <a href="#directory" class="header-button">
-            EXPLORE
-        </a>
+<nav class="nav">
 
-    </div>
+<a href="#forex">Forex</a>
+<a href="#equities">Stocks</a>
+<a href="#crypto">Crypto</a>
+<a href="#prop">Prop Trading</a>
+<a href="#macro">Macro</a>
+
+</nav>
+
+<a href="#newsletter" class="subscribe-btn">
+Newsletter
+</a>
+
+</div>
+
 </header>
 
-<!-- BREAKING / MARKET BAR -->
+
+<!-- BREAKING -->
+
 <div class="breaking">
-    <div class="container breaking-inner">
-        <span class="breaking-label">MARKET INTELLIGENCE</span>
-        <span class="breaking-text">
-            Independent guides covering global markets, trading and wealth preservation.
-        </span>
-    </div>
+
+<div class="container breaking-inner">
+
+<span class="breaking-label">
+MARKETFRONTIER
+</span>
+
+<span class="breaking-text">
+Global markets. Capital. Intelligence.
+</span>
+
 </div>
 
+</div>
+
+
 <!-- HERO -->
+
 <section class="hero">
-    <div class="container hero-grid">
 
-        <div>
-            <div class="kicker">Featured Guide · Forex</div>
+<div class="container hero-grid">
 
-            <h1>
-                The Complete Beginner's Guide to Forex Trading from Nigeria
-            </h1>
+<div class="hero-image">
 
-            <p class="hero-description">
-                A practical foundation for understanding currency markets,
-                leverage, liquidity, risk management, brokers and the forces
-                that move global FX markets.
-            </p>
-        </div>
+<!-- REAL FINANCIAL MARKET PHOTO -->
 
-        <div class="hero-side">
-            <div class="hero-side-label">Inside this guide</div>
+<img
+src="images/financial-market-trading.jpg"
+alt="Financial market charts and trading screens"
+>
 
-            <h3>
-                From market mechanics to capital protection.
-            </h3>
+</div>
 
-            <p>
-                Learn how currency pairs work, how liquidity affects execution,
-                how leverage changes risk and what to examine before committing
-                trading capital.
-            </p>
-        </div>
 
-    </div>
+<div class="hero-content">
+
+<div class="category">
+Featured · Forex
+</div>
+
+<h1>
+The Complete Beginner's Guide to Forex Trading from Nigeria
+</h1>
+
+<p class="hero-description">
+A practical guide to understanding currency markets, risk management,
+brokers, leverage and the mechanics of global foreign exchange trading.
+</p>
+
+<div class="article-meta">
+MarketFrontier Research · 12 min read
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- LATEST INTELLIGENCE -->
+
+<section class="section">
 
 <div class="container">
 
-    <div class="main-layout">
+<div class="section-header">
 
-        <!-- ARTICLE -->
-        <main>
+<h2>
+Latest Intelligence
+</h2>
 
-            <article>
-
-                <div class="article-header">
-
-                    <div class="article-category">
-                        Forex Strategy
-                    </div>
-
-                    <h2 class="article-title">
-                        The Complete Beginner's Guide to Forex Trading from Nigeria
-                    </h2>
-
-                    <div class="meta">
-                        <span>Cluster 1: Pillar Foundation</span>
-                        <span>12 Min Read</span>
-                        <span>Financial Intelligence</span>
-                    </div>
-
-                </div>
-
-                <div class="article-body">
-
-                    <p>
-                        Retail foreign exchange participation across emerging economies
-                        has expanded rapidly. Success in currency trading requires a firm
-                        grasp of macro liquidity, market mechanics, counterparty exposure,
-                        and systemic volatility before executing orders on digital terminals.
-                    </p>
-
-                    <p>
-                        Before risk capital is committed, you must examine
-                        <a href="#post-2">how currency pairs function across majors and exotics</a>.
-                        The global market does not evaluate individual units in a silo;
-                        every quote reflects an exchange equilibrium between two sovereign economies.
-                    </p>
-
-                    <p>
-                        Order sizing requires calculating leverage parameters accurately.
-                        Using debt capital via broker margins amplifies both gains and capital
-                        destruction. Review our complete operational guide on
-                        <a href="#post-4">calculating margin ratios and leverage safely</a>
-                        to ensure single trades never liquidate your balance.
-                    </p>
-
-                    <div class="internal-box">
-                        <strong>Related Pillar Resource</strong>
-                        Looking to protect your capital from local currency depreciation?
-                        Read our macroeconomic guide to
-                        <a href="#post-41">building a multi-currency defensive portfolio</a>.
-                    </div>
-
-                    <h2>1. Market Mechanics and Liquidity Execution</h2>
-
-                    <p>
-                        Execution precision depends on liquidity depth. The London and New York
-                        overlaps present the tightest spreads for standard pairs like EUR/USD and
-                        GBP/USD. To master technical price analysis, study our core visual guide to
-                        <a href="#post-3">reading Japanese candlestick patterns</a>.
-                    </p>
-
-                    <p>
-                        Always pair chart analysis with macroeconomic tracking. Global price action
-                        tracks central bank balance sheets and interest-rate differentials. Check our
-                        tutorial on
-                        <a href="#post-6">how the US Federal Reserve moves FX prices</a>
-                        to position ahead of rate cycles.
-                    </p>
-
-                    <h2>2. Counterparty Safeguards and Broker Verification</h2>
-
-                    <p>
-                        Capital security precedes technical profitability. Verify your provider holds
-                        direct licensing with Tier-1 regulators before making deposits. Follow our
-                        checklist on
-                        <a href="#post-8">evaluating regulated brokers via FCA and FSCA registers</a>.
-                    </p>
-
-                    <p>
-                        Never operate without strict risk boundaries. Consistent operators rely on
-                        mathematical expectancy, keeping maximum per-trade losses below 1–2%.
-                        Review our tactical guide on
-                        <a href="#post-9">calculating position size and risk control rules</a>.
-                    </p>
-
-                    <h2>3. Capitalizing Through Prop Firms</h2>
-
-                    <p>
-                        Under-capitalized traders often turn to third-party funding.
-                        Read our operational breakdown on
-                        <a href="#post-31">how prop firms evaluate funded accounts</a>,
-                        then learn the mathematical differences between
-                        <a href="#post-33">trailing vs. static drawdowns</a>.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </main>
-
-        <!-- SIDEBAR -->
-        <aside>
-
-            <div class="sidebar-widget">
-
-                <h3>Editor's Picks</h3>
-
-                <ul>
-                    <li>
-                        <a href="#post-1">
-                            Forex Beginner's Blueprint
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#post-11">
-                            Buying US Equities Locally
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#post-21">
-                            Practical Crypto Asset Guide
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#post-31">
-                            Prop Firm Qualification Playbook
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#post-41">
-                            Multi-Currency Preservation
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="sidebar-widget">
-
-                <h3>Security Essentials</h3>
-
-                <ul>
-                    <li>
-                        <a href="#post-10">
-                            Avoiding FX Scams & Ponzi Schemes
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#post-24">
-                            Cold Storage Wallet Fundamentals
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#post-30">
-                            Safe P2P Escrow Execution
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </aside>
-
-    </div>
+<span>
+MarketFrontier Research
+</span>
 
 </div>
 
-<!-- TRENDING -->
-<section class="trending">
 
-    <div class="container">
+<div class="featured-grid">
 
-        <div class="section-heading">
-            <h2>Explore the Intelligence</h2>
-            <span>50 Research Guides</span>
-        </div>
 
-        <div class="trending-grid">
+<!-- STOCK MARKET PHOTO -->
 
-            <a href="#cluster-1" class="trending-card">
-                <div class="trending-number">01</div>
-                <div>
-                    <h3>Forex Fundamentals</h3>
-                    <p>Market mechanics, execution, leverage and risk.</p>
-                </div>
-            </a>
+<article class="card card-large">
 
-            <a href="#cluster-2" class="trending-card">
-                <div class="trending-number">02</div>
-                <div>
-                    <h3>Global Equities</h3>
-                    <p>Stocks, ETFs, dividends and portfolio construction.</p>
-                </div>
-            </a>
+<div class="card-image">
 
-            <a href="#cluster-3" class="trending-card">
-                <div class="trending-number">03</div>
-                <div>
-                    <h3>Crypto & Web3</h3>
-                    <p>Digital assets, wallets, DeFi and security.</p>
-                </div>
-            </a>
+<img
+src="images/global-stock-market.jpg"
+alt="Global stock market data"
+>
 
-        </div>
+</div>
 
-    </div>
+<div class="card-content">
+
+<div class="card-category">
+Equities
+</div>
+
+<h3>
+Buying US Stocks Locally: A Practical Guide
+</h3>
+
+<p>
+How investors can understand global equities, indexes,
+ETFs and international portfolio exposure.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- CRYPTO PHOTO -->
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="images/cryptocurrency-market.jpg"
+alt="Cryptocurrency market"
+>
+
+</div>
+
+<div class="card-content">
+
+<div class="card-category">
+Crypto
+</div>
+
+<h3>
+Practical Digital Asset Strategy
+</h3>
+
+<p>
+Bitcoin, digital assets, custody and managing crypto volatility.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- GLOBAL MARKETS PHOTO -->
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="images/global-financial-markets.jpg"
+alt="Global financial markets"
+>
+
+</div>
+
+<div class="card-content">
+
+<div class="card-category">
+Macro
+</div>
+
+<h3>
+Building a Multi-Currency Wealth Strategy
+</h3>
+
+<p>
+Understanding currencies, inflation, purchasing power
+and global wealth protection.
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+</div>
+
+</section>
+
+
+<!-- MAIN ARTICLE -->
+
+<div class="container">
+
+<div class="main-layout">
+
+<main class="article">
+
+<div class="article-header">
+
+<div class="category">
+Forex · Market Education
+</div>
+
+<h1 class="article-title">
+The Complete Beginner's Guide to Forex Trading from Nigeria
+</h1>
+
+<div class="article-meta">
+MarketFrontier Research · Global Markets
+</div>
+
+</div>
+
+
+<div class="article-body">
+
+<p>
+Forex is the world's largest financial market, allowing participants
+to exchange one currency against another. For Nigerian investors,
+understanding the mechanics of currency markets is essential before
+putting capital at risk.
+</p>
+
+<p>
+Before risk capital is committed, you must understand
+<a href="#post-2">how currency pairs function across majors and exotics</a>.
+Every quote reflects an exchange relationship between two currencies.
+</p>
+
+<p>
+Order sizing requires calculating leverage parameters accurately.
+Using margin amplifies both gains and losses, making disciplined
+risk management essential.
+</p>
+
+
+<div class="internal-box">
+
+<strong>
+Related Market Intelligence
+</strong>
+
+Looking to protect your capital from local currency depreciation?
+
+<a href="#post-41">
+Read our guide to building a multi-currency defensive portfolio.
+</a>
+
+</div>
+
+
+<h2>
+1. Market Mechanics and Liquidity Execution
+</h2>
+
+<p>
+Execution precision depends on liquidity depth. The London and New York
+market overlaps can provide strong liquidity for major currency pairs.
+</p>
+
+<p>
+Always pair chart analysis with macroeconomic tracking. Global price
+action can respond to central-bank decisions, inflation data and
+interest-rate expectations.
+</p>
+
+
+<h2>
+2. Counterparty Safeguards and Broker Verification
+</h2>
+
+<p>
+Capital security precedes technical profitability. Verify that your
+provider is appropriately regulated before making deposits.
+</p>
+
+<p>
+Never operate without strict risk boundaries. Consistent traders
+define their maximum acceptable loss before entering a position.
+</p>
+
+
+<h2>
+3. Capitalizing Through Prop Firms
+</h2>
+
+<p>
+Under-capitalized traders sometimes explore third-party funding.
+Understanding evaluation rules, drawdowns and payout structures
+is essential before committing to any prop firm.
+</p>
+
+</div>
+
+</main>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="sidebar-widget">
+
+<h3>
+Most Read
+</h3>
+
+<div class="sidebar-item">
+<a href="#post-1">
+<span class="sidebar-number">01</span>
+Forex Trading in Nigeria
+</a>
+</div>
+
+<div class="sidebar-item">
+<a href="#post-11">
+<span class="sidebar-number">02</span>
+Buying US Stocks Locally
+</a>
+</div>
+
+<div class="sidebar-item">
+<a href="#post-21">
+<span class="sidebar-number">03</span>
+Digital Asset Strategy
+</a>
+</div>
+
+<div class="sidebar-item">
+<a href="#post-31">
+<span class="sidebar-number">04</span>
+Prop Firm Evaluation
+</a>
+</div>
+
+<div class="sidebar-item">
+<a href="#post-41">
+<span class="sidebar-number">05</span>
+Multi-Currency Wealth
+</a>
+</div>
+
+</div>
+
+
+<div class="sidebar-widget">
+
+<h3>
+Security Essentials
+</h3>
+
+<div class="sidebar-item">
+<a href="#post-10">
+Avoiding FX Scams
+</a>
+</div>
+
+<div class="sidebar-item">
+<a href="#post-24">
+Cold Storage Wallet Fundamentals
+</a>
+</div>
+
+<div class="sidebar-item">
+<a href="#post-30">
+Safe P2P Escrow Execution
+</a>
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+
+<!-- EXPLORE MARKETS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+Explore the Markets
+</h2>
+
+<span>
+5 Core Research Areas
+</span>
+
+</div>
+
+
+<div class="topic-grid">
+
+<a href="#cluster-1" class="topic" id="forex">
+
+<div class="topic-number">01</div>
+
+<h3>Forex</h3>
+
+<p>
+Currency pairs, leverage, liquidity, brokers,
+technical analysis and risk.
+</p>
+
+</a>
+
+
+<a href="#cluster-2" class="topic" id="equities">
+
+<div class="topic-number">02</div>
+
+<h3>Equities & ETFs</h3>
+
+<p>
+Global stocks, indices, dividends, ETFs
+and portfolio construction.
+</p>
+
+</a>
+
+
+<a href="#cluster-3" class="topic" id="crypto">
+
+<div class="topic-number">03</div>
+
+<h3>Crypto</h3>
+
+<p>
+Bitcoin, stablecoins, wallets, DeFi
+and digital asset security.
+</p>
+
+</a>
+
+
+<a href="#cluster-4" class="topic" id="prop">
+
+<div class="topic-number">04</div>
+
+<h3>Prop Trading</h3>
+
+<p>
+Evaluations, drawdowns, trading systems,
+psychology and automation.
+</p>
+
+</a>
+
+
+<a href="#cluster-5" class="topic" id="macro">
+
+<div class="topic-number">05</div>
+
+<h3>Macro & Wealth</h3>
+
+<p>
+Inflation, currencies, gold, purchasing power
+and allocation.
+</p>
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- DIRECTORY -->
-<section class="directory-section" id="directory">
 
-    <div class="container">
+<!-- RESEARCH LIBRARY -->
 
-        <div class="directory-intro">
+<section class="directory" id="directory">
 
-            <div class="kicker">Research Library</div>
+<div class="container">
 
-            <h2>
-                The Global Market Chronicles Library
-            </h2>
+<div class="directory-intro">
 
-            <p>
-                Explore our interconnected collection of 50 financial research
-                guides organized across five core market clusters.
-            </p>
+<div class="category">
+Research Library
+</div>
 
-        </div>
+<h2>
+The MarketFrontier Library
+</h2>
 
-        <div class="directory-grid">
+<p>
+Explore our interconnected collection of 50 financial research guides
+across five major market categories.
+</p>
 
-            <!-- CLUSTER 1 -->
-            <div class="cluster-box" id="cluster-1">
-                <h3>01 · Forex Fundamentals</h3>
+</div>
 
-                <ol>
-                    <li><a id="post-1" href="#post-1"><strong>Forex Trading in Nigeria</strong></a></li>
-                    <li><a id="post-2" href="#post-2">Understanding Currency Pairs</a></li>
-                    <li><a id="post-3" href="#post-3">Reading Candlestick Charts</a></li>
-                    <li><a id="post-4" href="#post-4">Leverage & Margin Explained</a></li>
-                    <li><a id="post-5" href="#post-5">Understanding Pips, Lots & Spreads</a></li>
-                    <li><a id="post-6" href="#post-6">Fed & CBN Interest Rates Impact</a></li>
-                    <li><a id="post-7" href="#post-7">Moving Averages & RSI Indicators</a></li>
-                    <li><a id="post-8" href="#post-8">Selecting Regulated Brokers</a></li>
-                    <li><a id="post-9" href="#post-9">Risk Management: The 1% Rule</a></li>
-                    <li><a id="post-10" href="#post-10">Identifying FX Scams in Nigeria</a></li>
-                </ol>
-            </div>
 
-            <!-- CLUSTER 2 -->
-            <div class="cluster-box" id="cluster-2">
-                <h3>02 · Global Equities & ETFs</h3>
+<div class="directory-grid">
 
-                <ol start="11">
-                    <li><a id="post-11" href="#post-11"><strong>Buying US Stocks Locally</strong></a></li>
-                    <li><a id="post-12" href="#post-12">S&P 500 vs. Nasdaq 100 Index</a></li>
-                    <li><a id="post-13" href="#post-13">DCA vs. Lump Sum Strategies</a></li>
-                    <li><a id="post-14" href="#post-14">Building Dividend Cashflow</a></li>
-                    <li><a id="post-15" href="#post-15">Low-Cost Global ETFs</a></li>
-                    <li><a id="post-16" href="#post-16">Reading Corporate Financials</a></li>
-                    <li><a id="post-17" href="#post-17">Growth vs. Value Cycles</a></li>
-                    <li><a id="post-18" href="#post-18">Hedging Naira Devaluation</a></li>
-                    <li><a id="post-19" href="#post-19">REITs: Passive Real Estate</a></li>
-                    <li><a id="post-20" href="#post-20">Bear Market Psychology</a></li>
-                </ol>
-            </div>
 
-            <!-- CLUSTER 3 -->
-            <div class="cluster-box" id="cluster-3">
-                <h3>03 · Crypto & Web3 Assets</h3>
+<div class="cluster" id="cluster-1">
 
-                <ol start="21">
-                    <li><a id="post-21" href="#post-21"><strong>Digital Asset Strategy</strong></a></li>
-                    <li><a id="post-22" href="#post-22">Bitcoin Scarcity & Halving</a></li>
-                    <li><a id="post-23" href="#post-23">Stablecoins: USDT vs. USDC</a></li>
-                    <li><a id="post-24" href="#post-24">Hot vs. Cold Storage Wallets</a></li>
-                    <li><a id="post-25" href="#post-25">CEX vs. DEX Platforms</a></li>
-                    <li><a id="post-26" href="#post-26">Proof of Work vs. Stake</a></li>
-                    <li><a id="post-27" href="#post-27">Smart Contracts & DeFi</a></li>
-                    <li><a id="post-28" href="#post-28">Managing Crypto Volatility</a></li>
-                    <li><a id="post-29" href="#post-29">Preventing Phishing & Drainers</a></li>
-                    <li><a id="post-30" href="#post-30">P2P Escrow Security Rules</a></li>
-                </ol>
-            </div>
+<h3>
+01 · Forex Fundamentals
+</h3>
 
-            <!-- CLUSTER 4 -->
-            <div class="cluster-box" id="cluster-4">
-                <h3>04 · Prop Trading & Automation</h3>
+<ol>
 
-                <ol start="31">
-                    <li><a id="post-31" href="#post-31"><strong>Prop Firm Evaluation</strong></a></li>
-                    <li><a id="post-32" href="#post-32">Passing Evaluation Challenges</a></li>
-                    <li><a id="post-33" href="#post-33">Trailing vs. Static Drawdowns</a></li>
-                    <li><a id="post-34" href="#post-34">Copy Trading Architecture</a></li>
-                    <li><a id="post-35" href="#post-35">MetaTrader 4 vs. MetaTrader 5</a></li>
-                    <li><a id="post-36" href="#post-36">Systematic Stop Loss Execution</a></li>
-                    <li><a id="post-37" href="#post-37">Payout Schedules & Reserves</a></li>
-                    <li><a id="post-38" href="#post-38">Overcoming Revenge Trading</a></li>
-                    <li><a id="post-39" href="#post-39">Building an Analytic Journal</a></li>
-                    <li><a id="post-40" href="#post-40">Trading Bot Realities vs. Myths</a></li>
-                </ol>
-            </div>
+<li><a id="post-1" href="#post-1">
+Forex Trading in Nigeria
+</a></li>
 
-            <!-- CLUSTER 5 -->
-            <div class="cluster-box" id="cluster-5">
-                <h3>05 · Macro & Wealth Protection</h3>
+<li><a id="post-2" href="#post-2">
+Understanding Currency Pairs
+</a></li>
 
-                <ol start="41">
-                    <li><a id="post-41" href="#post-41"><strong>Multi-Currency Wealth</strong></a></li>
-                    <li><a id="post-42" href="#post-42">Inflation vs. Purchasing Power</a></li>
-                    <li><a id="post-43" href="#post-43">Sovereign Debt & Equities</a></li>
-                    <li><a id="post-44" href="#post-44">Gold as an Inflation Hedge</a></li>
-                    <li><a id="post-45" href="#post-45">Liquid Reserves vs. Investments</a></li>
-                    <li><a id="post-46" href="#post-46">Offshore Banking Standards</a></li>
-                    <li><a id="post-47" href="#post-47">Geopolitical Energy Cycles</a></li>
-                    <li><a id="post-48" href="#post-48">Tax Standards on Global Yield</a></li>
-                    <li><a id="post-49" href="#post-49">Annual Portfolio Rebalancing</a></li>
-                    <li><a id="post-50" href="#post-50">5-Year Asset Allocation Model</a></li>
-                </ol>
-            </div>
+<li><a id="post-3" href="#post-3">
+Reading Candlestick Charts
+</a></li>
 
-        </div>
+<li><a id="post-4" href="#post-4">
+Leverage & Margin Explained
+</a></li>
 
-        <!-- NEWSLETTER -->
-        <div class="newsletter">
+<li><a id="post-5" href="#post-5">
+Understanding Pips, Lots & Spreads
+</a></li>
 
-            <div>
-                <h2>Stay Ahead of the Markets.</h2>
+<li><a id="post-6" href="#post-6">
+Fed & CBN Interest Rates Impact
+</a></li>
 
-                <p>
-                    Get new market intelligence, investing guides and financial
-                    research delivered to your inbox.
-                </p>
-            </div>
+<li><a id="post-7" href="#post-7">
+Moving Averages & RSI Indicators
+</a></li>
 
-            <form class="newsletter-form">
-                <input
-                    type="email"
-                    placeholder="Your email address"
-                    aria-label="Email address"
-                >
+<li><a id="post-8" href="#post-8">
+Selecting Regulated Brokers
+</a></li>
 
-                <button type="submit">
-                    SUBSCRIBE
-                </button>
-            </form>
+<li><a id="post-9" href="#post-9">
+Risk Management: The 1% Rule
+</a></li>
 
-        </div>
+<li><a id="post-10" href="#post-10">
+Identifying FX Scams in Nigeria
+</a></li>
 
-    </div>
+</ol>
+
+</div>
+
+
+<div class="cluster" id="cluster-2">
+
+<h3>
+02 · Global Equities & ETFs
+</h3>
+
+<ol start="11">
+
+<li><a id="post-11" href="#post-11">
+Buying US Stocks Locally
+</a></li>
+
+<li><a id="post-12" href="#post-12">
+S&P 500 vs. Nasdaq 100 Index
+</a></li>
+
+<li><a id="post-13" href="#post-13">
+DCA vs. Lump Sum Strategies
+</a></li>
+
+<li><a id="post-14" href="#post-14">
+Building Dividend Cashflow
+</a></li>
+
+<li><a id="post-15" href="#post-15">
+Low-Cost Global ETFs
+</a></li>
+
+<li><a id="post-16" href="#post-16">
+Reading Corporate Financials
+</a></li>
+
+<li><a id="post-17" href="#post-17">
+Growth vs. Value Cycles
+</a></li>
+
+<li><a id="post-18" href="#post-18">
+Hedging Naira Devaluation
+</a></li>
+
+<li><a id="post-19" href="#post-19">
+REITs: Passive Real Estate
+</a></li>
+
+<li><a id="post-20" href="#post-20">
+Bear Market Psychology
+</a></li>
+
+</ol>
+
+</div>
+
+
+<div class="cluster" id="cluster-3">
+
+<h3>
+03 · Crypto & Web3 Assets
+</h3>
+
+<ol start="21">
+
+<li><a id="post-21" href="#post-21">
+Digital Asset Strategy
+</a></li>
+
+<li><a id="post-22" href="#post-22">
+Bitcoin Scarcity & Halving
+</a></li>
+
+<li><a id="post-23" href="#post-23">
+Stablecoins: USDT vs. USDC
+</a></li>
+
+<li><a id="post-24" href="#post-24">
+Hot vs. Cold Storage Wallets
+</a></li>
+
+<li><a id="post-25" href="#post-25">
+CEX vs. DEX Platforms
+</a></li>
+
+<li><a id="post-26" href="#post-26">
+Proof of Work vs. Stake
+</a></li>
+
+<li><a id="post-27" href="#post-27">
+Smart Contracts & DeFi
+</a></li>
+
+<li><a id="post-28" href="#post-28">
+Managing Crypto Volatility
+</a></li>
+
+<li><a id="post-29" href="#post-29">
+Preventing Phishing & Drainers
+</a></li>
+
+<li><a id="post-30" href="#post-30">
+P2P Escrow Security Rules
+</a></li>
+
+</ol>
+
+</div>
+
+
+<div class="cluster" id="cluster-4">
+
+<h3>
+04 · Prop Trading & Automation
+</h3>
+
+<ol start="31">
+
+<li><a id="post-31" href="#post-31">
+Prop Firm Evaluation
+</a></li>
+
+<li><a id="post-32" href="#post-32">
+Passing Evaluation Challenges
+</a></li>
+
+<li><a id="post-33" href="#post-33">
+Trailing vs. Static Drawdowns
+</a></li>
+
+<li><a id="post-34" href="#post-34">
+Copy Trading Architecture
+</a></li>
+
+<li><a id="post-35" href="#post-35">
+MetaTrader 4 vs. MetaTrader 5
+</a></li>
+
+<li><a id="post-36" href="#post-36">
+Systematic Stop Loss Execution
+</a></li>
+
+<li><a id="post-37" href="#post-37">
+Payout Schedules & Reserves
+</a></li>
+
+<li><a id="post-38" href="#post-38">
+Overcoming Revenge Trading
+</a></li>
+
+<li><a id="post-39" href="#post-39">
+Building an Analytic Journal
+</a></li>
+
+<li><a id="post-40" href="#post-40">
+Trading Bot Realities vs. Myths
+</a></li>
+
+</ol>
+
+</div>
+
+
+<div class="cluster" id="cluster-5">
+
+<h3>
+05 · Macro & Wealth Protection
+</h3>
+
+<ol start="41">
+
+<li><a id="post-41" href="#post-41">
+Multi-Currency Wealth
+</a></li>
+
+<li><a id="post-42" href="#post-42">
+Inflation vs. Purchasing Power
+</a></li>
+
+<li><a id="post-43" href="#post-43">
+Sovereign Debt & Equities
+</a></li>
+
+<li><a id="post-44" href="#post-44">
+Gold as an Inflation Hedge
+</a></li>
+
+<li><a id="post-45" href="#post-45">
+Liquid Reserves vs. Investments
+</a></li>
+
+<li><a id="post-46" href="#post-46">
+Offshore Banking Standards
+</a></li>
+
+<li><a id="post-47" href="#post-47">
+Geopolitical Energy Cycles
+</a></li>
+
+<li><a id="post-48" href="#post-48">
+Tax Standards on Global Yield
+</a></li>
+
+<li><a id="post-49" href="#post-49">
+Annual Portfolio Rebalancing
+</a></li>
+
+<li><a id="post-50" href="#post-50">
+5-Year Asset Allocation Model
+</a></li>
+
+</ol>
+
+</div>
+
+</div>
+
+
+<!-- NEWSLETTER -->
+
+<div class="newsletter" id="newsletter">
+
+<div>
+
+<h2>
+Think Beyond the Market.
+</h2>
+
+<p>
+Get MarketFrontier's latest financial guides,
+market intelligence and investing research.
+</p>
+
+</div>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Your email address"
+required
+>
+
+<button type="submit">
+SUBSCRIBE
+</button>
+
+</form>
+
+</div>
+
+</div>
 
 </section>
+
 
 <!-- FOOTER -->
+
 <footer>
 
-    <div class="container footer-inner">
+<div class="container footer-inner">
 
-        <div>
-            <div class="footer-logo">
-                GLOBAL MARKET CHRONICLES
-            </div>
+<div>
 
-            <div>
-                Independent financial education and market intelligence.
-            </div>
-        </div>
+<div class="footer-logo">
+MarketFrontier
+</div>
 
-        <div>
-            © 2026 Global Market Chronicles
-        </div>
+<div class="footer-text">
+Global markets. Capital. Intelligence.
+</div>
 
-    </div>
+</div>
+
+
+<div class="footer-links">
+
+<a href="#forex">Forex</a>
+<a href="#equities">Stocks</a>
+<a href="#crypto">Crypto</a>
+<a href="#macro">Macro</a>
+
+</div>
+
+
+<div class="footer-text">
+© 2026 MarketFrontier
+</div>
+
+</div>
 
 </footer>
 
